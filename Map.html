@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <!--Notice the order than the scripts are added
+  If mainscript needs to access any function etc. from google's code
+  or from our own utilities.js, they need to be loaded first.
+
+  The problem with Google's code is that it will probably take longer
+  to load than our scripts. The callback parameter takes the name
+  of a function, and then it will call that function once Google's code
+  has loaded. So callback=mapCode calls a function called mapCode once
+  Google's code has loaded. mapCode() is in mainscript.js.  -->
+
+  <script src="https://maps.googleapis.com/maps/api/js?callback=mapCode"
+          async defer></script>
+
+  <script type="text/javascript" src="utilities.js"></script>
+  <script type="text/javascript" src="mainscript.js"></script>
+
+</body>
+</html>
